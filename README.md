@@ -1,15 +1,17 @@
 
 
-/*What is React*/
-React is a front-end Javascript library which is useful in developing UI for single page applications. It is helpful in building complex and reusable UI components applications. 
-Support server-side rendering.
-Use virtual DOM rather than real DOM as RealDOM manipulations are expensive.
-Follow one way data binding.
-JSX makes code more readable
-Component based: use reusable or composable UI components for developing the view.
+## What is React 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- React is a front-end Javascript library which is useful in developing UI for single page applications. It is helpful in building complex and reusable UI components applications. 
+- Support server-side rendering.
+- Use virtual DOM rather than real DOM as RealDOM manipulations are expensive.
+- follow one way data binding.
+- JSX makes code more readable
+- Component based: use reusable or composable UI components for developing the view.
 
 
-/*What are the advantages of using React*/
+## What is the advantage of React 
 Component-Based architecture: app are built on independent, reusable components and easy to integrate with other frameworks (Angular, Backbone)
 Use Virtual DOM to improve performance
 Using JSX, make code easy to read
