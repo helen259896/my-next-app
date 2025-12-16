@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.slider-container {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.slider-container .slick-pre:before,
+.slider-container .slick-nest:before {
+  color: yellow;
+}

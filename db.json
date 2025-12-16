@@ -1,0 +1,65 @@
+
+{
+  "products": [
+    { 
+      "id": "1",
+      "title": "a title",
+      "price": 100, 
+      "description": "this is valuable"
+    },
+    { 
+      "id": "2",
+      "title": "another title",
+      "price": 200,
+      "description": "this is precious stone"
+    },
+    { 
+      "id": "3",
+      "title": "third title",
+      "price": 300,
+      "description": "this is precious gem stone"
+    },
+    { 
+      "id": "4",
+      "title": "fourth title",
+      "price": 400,
+      "description": "this is a great gem stone"
+    },
+    { 
+      "id": "5",
+      "title": "fifth title",
+      "price": 500,
+      "description": "this is fantastic gem stone"
+    },
+    { 
+      "id": "6",
+      "title": "sixth title",
+      "price": 600,
+      "description": "this is beautiful gem stone"
+    },
+    { 
+      "id": "7",
+      "title": "seventh title",
+      "price": 700,
+      "description": "this is fabulous gem stone"
+    },
+    { 
+      "id": "8",
+      "title": "eighth title",
+      "price": 800,
+      "description": "this is nice gem stone"
+    },
+    { 
+      "id": "9",
+      "title": "nineth title",
+      "price": 900,
+      "description": "this is extremelly good gem stone"
+    },
+    { 
+      "id": "10",
+      "title": "tenth title",
+      "price": 1000,
+      "description": "this is very precious gem stone"
+    }
+  ]
+}
