@@ -10,63 +10,63 @@
 
 
 ### What is the advantage of React 
-Component-Based architecture: app are built on independent, reusable components and easy to integrate with other frameworks (Angular, Backbone)
-Use Virtual DOM to improve performance
-Using JSX, make code easy to read
-It renders both on client as well as server side
-Unidirectional data flow. 
-Declarative UI and easy testing by using jest
+- Component-Based architecture: app are built on independent, reusable components and easy to integrate with other frameworks (Angular, Backbone)
+- Use Virtual DOM to improve performance
+- Using JSX, make code easy to read
+- It renders both on client as well as server side
+- Unidirectional data flow. 
+- Declarative UI and easy testing by using jest
 
 
 ###  What are the limitations of React
-React is a view library, not a full framework.
-Learning curve for developers.
-Integrating into a traditional MVC framework requires additional configuration.
-Code complexity increases with inline templating and JSX.
-Too many smaller components.
+- React is a view library, not a full framework.
+- Learning curve for developers.
+- Integrating into a traditional MVC framework requires additional configuration.
+- Code complexity increases with inline templating and JSX.
+- Too many smaller components.
 
 
 ### What are the major features of React
-Core features: 
-Reusable components: React apps are built on components. They are independent, reusable. 
-Virtual DOM:
-JSX: a syntax extension that can write HTML-like code in Javascript. It makes code more readable.
-Unidirectional Data Flow: It follows a one-way data binding model where data flows from parent to child components. It makes the code more predictable and easily to debug.
-Declarative UI. it allows you to describe what UI should look like for a given state, and it handles the DOM updates.
-Advanced features:
-React Hooks: use state and other React features in functional components.
-Context API: provides a way to share values between components without explicitly passing props through every level of component tree.	
-Error Boundaries: components that catch Javascript errors anywhere in their child component tree and display fallback UI instead of crashing.
-Server-Side Rendering: enables rendering React components on server before sending HTML to the client, improving performance and SEO.
-Concurrent Mode: new features that help React apps stay responsive and adjust to user’s device capabilities and network speed.
-React Server Components: new features that allow components to be rendered entirely on the server, reducing bundle size and improving performance.
-Suspense: supports code splitting and data fetching. It renders fallback before data return.
+## Core features: 
+- Reusable components: React apps are built on components. They are independent, reusable. 
+- Virtual DOM:
+- JSX: a syntax extension that can write HTML-like code in Javascript. It makes code more readable.
+- Unidirectional Data Flow: It follows a one-way data binding model where data flows from parent to child components. It makes the code more predictable and easily to debug.
+- Declarative UI. it allows you to describe what UI should look like for a given state, and it handles the DOM updates.
+## Advanced features:
+- React Hooks: use state and other React features in functional components.
+- Context API: provides a way to share values between components without explicitly passing props through every level of component tree.	
+- Error Boundaries: components that catch Javascript errors anywhere in their child component tree and display fallback UI instead of crashing.
+- Server-Side Rendering: enables rendering React components on server before sending HTML to the client, improving performance and SEO.
+- Concurrent Mode: new features that help React apps stay responsive and adjust to user’s device capabilities and network speed.
+- React Server Components: new features that allow components to be rendered entirely on the server, reducing bundle size and improving performance.
+- Suspense: supports code splitting and data fetching. It renders fallback before data return.
 
 
 ### Element and Component
-Element: 
-a React element is a plain JS object. It represents a DOM node or a component. It is the smallest building block in React.
-Elements are immutable. Once created, they can’t change their properties. 
-Elements can be nested within other elements through their props.
-Creating an element is fast. It doesn’t impact the real DOM directly
-Component:
-A component is a function or class that returns an element or a tree of elements to describe part of the UI. Components accept props and can manage their own states.
-Components can be split into independent reusable pieces.
-Can be defined by a function or a class.
+## Element: 
+- a React element is a plain JS object. It represents a DOM node or a component. It is the smallest building block in React.
+- Elements are immutable. Once created, they can’t change their properties. 
+- Elements can be nested within other elements through their props.
+- Creating an element is fast. It doesn’t impact the real DOM directly
+## Component:
+- A component is a function or class that returns an element or a tree of elements to describe part of the UI. Components accept props and can manage their own states.
+- Components can be split into independent reusable pieces.
+- Can be defined by a function or a class.
 
 
 ###  Pure Component
 Is a class component that extends React.PureComponent. It automatically implements the shouldComponentUpdate method with a shallow comparison of props.
 Help to optimize performance by preventing unnecessary re-rendering. If props and state haven’t changed, it will skip re-rendering.
-State
+
+### State
 Refers to a Javascript object that holds data and properties belonging to a component. It can change over time and trigger re-render of the component.
 
-
 ### Props
-Data (includes functions) passes to a child component from a parent component.
-Read-only: once  a component receives a set of props, it can’t directly modify them.
-Works for functional and class components
-Component reusability: props enable components to be highly reusable.
+- Data (includes functions) passes to a child component from a parent component.
+- Read-only: once  a component receives a set of props, it can’t directly modify them.
+- Works for functional and class components
+- Component reusability: props enable components to be highly reusable.
 
 
 ### State vs Props
@@ -98,36 +98,36 @@ A way to handle input event. Now, some devices don’t have a mouse, such as a p
 
 ### JSX
 Stands for Javascript XML. It is an XML-like Javascript extension used in React.
-It allows you to write HTML inside JavaScript and place them in the DOM without using appendChild func. It makes the code more readable and expressive.
-it is a syntactic sugar for React function.
-Need a transpiler to convert your JSX to regular Javascript that browsers can understand. The most widely used transpiler is Babel.  
+- It allows you to write HTML inside JavaScript and place them in the DOM without using appendChild func. - It makes the code more readable and expressive.
+- it is a syntactic sugar for React function.
+- Need a transpiler to convert your JSX to regular Javascript that browsers can understand. The most widely used transpiler is Babel.  
 
 ### Rules of JSX
 Return a single root element. Multiple elements need a single parent element.
-All the tags need to be closed
-Use camelCase naming
+- All the tags need to be closed
+- Use camelCase naming
 
 ### Virtual DOM
 It is an in-memory representation of the actual DOM, a lightweight copy of real DOM.
-When a state change occurs in a React component, React first updates the Virtual Dom.
-Then compares it with the previous Virtual DOM (using a process called diffing). 
-React only applies the differences to the real DOM. This entire process is called reconciliation. 
-The entire process– working with Virtual DOM, diffing, and selective updating— makes the UI rendering much faster and more efficient than manipulating the Real DOM directly.
+- When a state change occurs in a React component, React first updates the Virtual Dom.
+- Then compares it with the previous Virtual DOM (using a process called diffing). 
+- React only applies the differences to the real DOM. This entire process is called reconciliation. 
+- The entire process– working with Virtual DOM, diffing, and selective updating— makes the UI rendering much faster and more efficient than manipulating the Real DOM directly.
 
 ### Reconciliation
 Is the process through which React updates the Browser DOM and makes rendering faster.
 
 ### Real DOM
 Represents the structure of an HTML document in the form of a tree.
-Each node is an element in the document.
-It is an interface that allows JS to manipulate and interact with the content, structure and style.
+- Each node is an element in the document.
+- It is an interface that allows JS to manipulate and interact with the content, structure and style.
 Direct updates are expensive  
 
 
 
 ### environment variable
-process.brower
-process.env
+- process.brower
+- process.env
 
 Disable javascript on chrome:
 Inspection→ command+shift+p →type javascript →select disable Javascript
@@ -142,10 +142,10 @@ React Router is a wrapper around the history library. Router handles browser’s
 
 ### <Router> components of v6
 React Router v6 has 4 <Router> components. React Router v6 makes properties and methods of history instances associated with your router through the context in the router object.
-<BrowserRouter>: uses HTML5 history API for standard web apps.
-<HashRouter>: uses hash-based routing for static servers. 
-<MemoryRouter>: uses in-memory routing for testing and non-browser environment 
-<StaticRouter>: provides static routing for server-side rendering. 
+- <BrowserRouter>: uses HTML5 history API for standard web apps.
+- <HashRouter>: uses hash-based routing for static servers. 
+- <MemoryRouter>: uses in-memory routing for testing and non-browser environment 
+- <StaticRouter>: provides static routing for server-side rendering. 
 
 ### Implement default or NotFound page
 
@@ -155,19 +155,19 @@ Redirect will navigate to a new location. The new location will override the cur
  
 
 ### Common folder structures
-Grouping by features or routes
-Grouping by file type 
+- Grouping by features or routes
+- Grouping by file type 
 
 ### BrowserRouter vs HashRouter
 BrowserRouter: 
-Use HTML5 history API to render the component. The history can be modified via pushState or replaceState. On the client side, window.location.pathname is parsed by react router. 
-The setup may involve server-side rendering, index.html file. 
-Using a dynamic server and handle dynamic URLs  needs the BrowserRouter.
+- Use HTML5 history API to render the component. The history can be modified via pushState or replaceState. On the client side, window.location.pathname is parsed by react router. 
+- The setup may involve server-side rendering, index.html file. 
+- Using a dynamic server and handle dynamic URLs  needs the BrowserRouter.
 
 HashRouter
-Use hash in the URL to render the component. 
-The setup cannot be backed up by server-side rendering because it’s path that is served on server side. On the client side, window.location.hash is parsed by the react router.
-Using servers for static files needs a hashRouter. 
+- Use hash in the URL to render the component. 
+- The setup cannot be backed up by server-side rendering because it’s path that is served on server side. On the client side, window.location.hash is parsed by the react router.
+- Using servers for static files needs a hashRouter. 
 
 
 
@@ -188,12 +188,12 @@ Shallow rendering is useful in unit tests. It lets the component render one leve
 Useful when refresh the page and store the storage data.
 localStorage: data will not expire. 
 sessionStorage:  
-is cleared when the page session ends. 
-Open a new tab or window will create a new session with the value of the top-level browsing context.
-Open multiple tabs/windows with the same URL creates sessionStorage for each tab/window.
-Duplicate a tab copies the tab’s sessionStorage into the new tab.
-Close a tab/window ends the session and clears objects in sessionStorage. 
-It is key/value pairs in string format. 
+- is cleared when the page session ends. 
+- Open a new tab or window will create a new session with the value of the top-level browsing context.
+- Open multiple tabs/windows with the same URL creates sessionStorage for each tab/window.
+- Duplicate a tab copies the tab’s sessionStorage into the new tab.
+- Close a tab/window ends the session and clears objects in sessionStorage. 
+- It is key/value pairs in string format. 
 sessionStorage.setItem(“key”, “value”);
 let data = sessionStorage.getItem(“key”);
 sessionStorage.removeItem(“key”);
@@ -204,9 +204,9 @@ It is a method that enables cross-origin communication between window objects. S
 
 ### Cookie
 It is a key/value pair that is stored on your computer browser.  Cookies are used to remember info about user profiles (such as username).
-When a user visits a web page, the user profile can be stored in a cookie
-Next time the user visits the page, the cookie remembers the user profile.
-Delete a  cookie, set the expiry data as a passed date.
+- When a user visits a web page, the user profile can be stored in a cookie
+- Next time the user visits the page, the cookie remembers the user profile.
+- Delete a  cookie, set the expiry data as a passed date.
 document.cookie = "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";
 
 ### Cookie, localStorage sessionStorage
@@ -218,10 +218,10 @@ document.cookie = "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";
 ### Web worker
 Enable web content to run scripts in background threads, separate from the main user interface thread.
 It allows computation intensive tasks to be performed without blocking the main thread. 
-Background execution: parallel execution to separate threads
-Isolation from the DOM: it run in their own global context and don’t access the DOM.
-It can’t access Window obj, Document obj, Parent obj.
-Message passing communication: the main thread and a worker communicated by sending messages to each other using the postMessage() method and responding via onmessage event handler.
+- Background execution: parallel execution to separate threads
+- Isolation from the DOM: it run in their own global context and don’t access the DOM.
+- It can’t access Window obj, Document obj, Parent obj.
+- Message passing communication: the main thread and a worker communicated by sending messages to each other using the postMessage() method and responding via onmessage event handler.
 
 ### Example
 1 Create a webworker file: create a file as counter.js
@@ -237,13 +237,13 @@ w = undefined;
 
 ### Promise
 Is a JavaScript obj that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It has 3 states:
-Pending: initial state, neither fulfilled nor rejected.
-Fulfilled: operation completed successfully
-Rejected: operation failed.
-Handle asynchronous operations.
-Provide a cleaner alternative to callbacks.
-Avoid callback hell
-Make code more readable and maintainable.
+  - Pending: initial state, neither fulfilled nor rejected.
+  - Fulfilled: operation completed successfully
+  - Rejected: operation failed.
+- Handle asynchronous operations.
+- Provide a cleaner alternative to callbacks.
+- Avoid callback hell
+- Make code more readable and maintainable.
 
 ### Callback
 Is a function passed into another function as an argument. It is invoked inside the outer function to complete an action.
@@ -252,31 +252,31 @@ Is a function passed into another function as an argument. It is invoked inside 
 
 ### React lifecycle method
 Methods that will be automatically called at different phases. It provides effective control and manipulation throughout the component lifecycle.
-Constructor: it is called when a component is initiated. Set up the initial state and values.
-getDerivedStateFromProps:  it is called before elements rendering in the DOM. It helps to set up the state object depending on the initial props. It has a state as an argument and it returns an object that made changes to the state.
-Render: it will output or re-render the HTML to the DOM with new changes. It is an essential method and will always be called.
-componentDidMount: it is called after the rendering of the component.
-shouldComponentUpdate: it will return a boolean which specifies whether React should proceed further with the rendering or not. Default value is true.
-getSnapshotBeforeUpdate: it can access the props and state before the update.
-componentDidUpdate: it is called after the component has been updated in the DOM.
-componentWillUnmount: it is called when component removal from the DOM.
+- Constructor: it is called when a component is initiated. Set up the initial state and values.
+- getDerivedStateFromProps:  it is called before elements rendering in the DOM. It helps to set up the state object depending on the initial props. It has a state as an argument and it returns an object that made changes to the state.
+- Render: it will output or re-render the HTML to the DOM with new changes. It is an essential method and will always be called.
+- componentDidMount: it is called after the rendering of the component.
+- shouldComponentUpdate: it will return a boolean which specifies whether React should proceed further with the rendering or not. Default value is true.
+- getSnapshotBeforeUpdate: it can access the props and state before the update.
+- componentDidUpdate: it is called after the component has been updated in the DOM.
+- componentWillUnmount: it is called when component removal from the DOM.
 
 ### React Hooks
 It is a Javascript function. It allows developers to use state and other React features in functional components without converting them into class components. Such as useState, useEffect, useContext …
 Abstract stateful logic from components.
-It provides a simpler way for render props and HOC.
-It doesn’t cover all use cases of classes. There are no hook equivalents to the getSnapshotBeforeUpdate and componentDidCatch lifecycles. 
+- It provides a simpler way for render props and HOC.
+- It doesn’t cover all use cases of classes. There are no hook equivalents to the getSnapshotBeforeUpdate and componentDidCatch lifecycles. 
 
 ### Benefit of React Hooks
-Simplified state management
-Improve code readability & reusable logic: break code into smaller, reusable pieces of logic.
-Reduce need for lifecycle methods
-Enhance testing
+- Simplified state management
+- Improve code readability & reusable logic: break code into smaller, reusable pieces of logic.
+- Reduce need for lifecycle methods
+- Enhance testing
 
 
 ### What rules need to be followed for hooks?
-Call hooks only at the top level of react functions. Never inside loops, conditions or nested functions. 
-Call hooks from react functions or custom hooks only.
+- Call hooks only at the top level of react functions. Never inside loops, conditions or nested functions. 
+- Call hooks from react functions or custom hooks only.
 Apply the above rules by modifying your ESLint.config file.
 
 
@@ -293,16 +293,16 @@ Global state: use Context API or state management libraries Redux
 
 ### Ref
 Ref use cases
-Managing focus, text selection, media playback
-Triggering imperative animations
-Integrating with third-party DOM libraries.
+- Managing focus, text selection, media playback
+- Triggering imperative animations
+- Integrating with third-party DOM libraries.
 
 ### How useState trigger re-render
 When state updates from useState, React schedules the component to re-render. It updates the Virtual DOM. Virtual Dom compares it with the previous one and applies the necessary changes to the actual DOM. Then the UI reflects the new state changes. 
 
 ### useState vs useRef
-useState: causes components to re-render after state updates. Update is inside components.
-useRef: don’t cause components to re-render when state changes. It references DOM elements. 
+- useState: causes components to re-render after state updates. Update is inside components.
+- useRef: don’t cause components to re-render when state changes. It references DOM elements. 
 
 ### useReducer vs useState
 Feature
@@ -326,14 +326,14 @@ Highly reusable & testable
 ### useReducer
 It is a React hook used to manage complex state logic inside functional components. It dispatch an action to a reducer function to update its state. It takes 3 arguments:
 const [state, dispatch] = useReducer(reducer, initialState, initFunction);
-reducer:   a function(state, action) => newState that handles how state should change based on the action.
-initialState: 
-dispatch: a function to trigger an update by passing an action.
+- reducer:   a function(state, action) => newState that handles how state should change based on the action.
+- initialState: 
+- dispatch: a function to trigger an update by passing an action.
 When to use useReducer hook
-The state is complex, such as nested structures or multiple related values.
-State updates depends on previous state or logic
-Want to separate state update logic from UI
-Manage features like Forms, Wizards, undo/redo functionality, shopping cart logic …
+- The state is complex, such as nested structures or multiple related values.
+- State updates depends on previous state or logic
+- Want to separate state update logic from UI
+- Manage features like Forms, Wizards, undo/redo functionality, shopping cart logic …
 
 
 ### Combine useReducer with useContext
@@ -352,10 +352,10 @@ Is a React hook that lets you perform side effects in function components. Side 
 
 ### useEffect hook dependency
 useEffect hook accepts an optional dependencies argument that accepts an array of reactive values. The dependency array determines when the effect runs. React uses shallow comparison of the depencies. 
-effect runs once after initial render:   useEffect(() => {}, [])
-effect runs on first render and every time dependency value changes: 
+- effect runs once after initial render:   useEffect(() => {}, [])
+- effect runs on first render and every time dependency value changes: 
 useEffect(() => {}, [user, count])
-effect runs after every render:  useEffect(() => {})
+- effect runs after every render:  useEffect(() => {})
 
 ### Multiple useEffect hook
 Multiple useEffect hooks are recommended when you want to separate logic.
@@ -365,12 +365,12 @@ useEffect(() => {			useEffect(() => {
 
 ### Use cases of useLayoutEffect
 When effect must run before the browser paints, such as
-Reading layout measurement (element size, scroll position)
-Synchronously applying DOM styles
-Animating layout or transitions
-Integrating with third-party libraries that required DOM manipulation
-It does not run on the server.
-Other logic than layout or visual DOM changes is not recommended, such as logging, data fetching, analytics
+- Reading layout measurement (element size, scroll position)
+- Synchronously applying DOM styles
+- Animating layout or transitions
+- Integrating with third-party libraries that required DOM manipulation
+- It does not run on the server.
+- Other logic than layout or visual DOM changes is not recommended, such as logging, data fetching, analytics
 
 
 ### How does useLayoutEffect cause layout thrashing?
@@ -397,11 +397,11 @@ Is a component that renders one of many components. Need to use an object to map
 
 ### useContext
 Is a built-in React Hook that lets you access the value of a context inside a functional component. It avoids prop drilling, passing props through each level. 
-Create context       
+- Create context       
 const ThemeContext = createContext();
-Provide the context value
+- Provide the context value
 
-Consume the context. Components that subscribe to context changes are called consumers.
+- Consume the context. Components that subscribe to context changes are called consumers.
 
 
 
@@ -434,11 +434,11 @@ Below is an example to access and change a variable’s value.
 
 
 ### useRef usecases
-Automatically focus an input when a component mounts
-Scroll to a specific element.
-Measure element dimension (offsetWidth, clientHeight)
-Control video/audio playback
-Integrate with non-React libraries
+- Automatically focus an input when a component mounts
+- Scroll to a specific element.
+- Measure element dimension (offsetWidth, clientHeight)
+- Control video/audio playback
+- Integrate with non-React libraries
 
 ### forwardRef
 Is a feature that lets components take a ref as a parameter, and pass it to a child.
@@ -454,35 +454,36 @@ Custom hooks are Javascript functions that allow to extract and reuse component 
 ### How does React Fiber work?
 React Fiber is the core engine that enables advanced features like concurrent rendering, prioritization and interruptibility in React.
 Fiber tree structure: each component in the app is represented by a Fiber node in a tree structure. A Fiber node contains:
-Component type
-Props and state
-Pointers to parent, child and sibling nodes
-Effect tags to trace changes
-This forms the Fiber tree, a data structure instead of traditional call stack.
+- Component type
+- Props and state
+- Pointers to parent, child and sibling nodes
+- Effect tags to trace changes
+- This forms the Fiber tree, a data structure instead of traditional call stack.
 Two phases of rendering
 Render phase:
-React builds a work-in-progress Fiber tree
-it walks through each component, calculates what needs to change, and collects side effects.
-This phase is interruptible —-can be paused and resumed later.
-Commit phase:
-React applies changes to the Real DOM.
-Runs lifecycle method: useEffect
-This phase is non-interruptible but fast.
+- React builds a work-in-progress Fiber tree
+- it walks through each component, calculates what needs to change, and collects side effects.
+- This phase is interruptible —-can be paused and resumed later.
+- Commit phase:
+- React applies changes to the Real DOM.
+- Runs lifecycle method: useEffect
+- This phase is non-interruptible but fast.
 Work units and scheduling
-React breaks rendering into units of work.
-These units are scheduled based on priority using the React Scheduler
-If time  runs out, React can pause and yield control back to the browser
+- React breaks rendering into units of work.
+- These units are scheduled based on priority using the React Scheduler
+I- f time  runs out, React can pause and yield control back to the browser
 Double buffering with two trees: React maintains two trees
-Current tree: what is visible on the screen
-Work-In-Progress Tree: the next version being built in memory
+- Current tree: what is visible on the screen
+- Work-In-Progress Tree: the next version being built in memory
 After the new tree is fully ready, React commits it, making it the new current tree.
 Concurrency and prioritization
 React can prepare multiple versions of UI at once.
 Updates can be assigned priority, so urgent updates are handled faster than background work.
-Controlled vs Uncontrolled components
-Controlled components: rely on React state to manage the form element’s state.
+
+### Controlled vs Uncontrolled components
+- Controlled components: rely on React state to manage the form element’s state.
 It has full control of the form data. Easy to implement validation, test, debug.
-Uncontrolled components: rely on DOM and use refs for accessing values of form input.
+- Uncontrolled components: rely on DOM and use refs for accessing values of form input.
 No need to use the useState and onChange method. 
 
 
@@ -700,9 +701,9 @@ Lazy loading: load components and data only when needed
 
 ### Service Worker:
 Service workers act as proxy servers that sit between web applications, the browser and network. It enables app to have offline experience, intercept network requests, and take appropriate action based on network availability.
-It caches your assets and other files so users can view pages when offline or on a slow network,  periodic background syncs, and manage cache of a response.
-It has no DOM access. Run on a different thread to the main Javascript app. They are non-blocking and designed to be fully asynchronous. 
-Only work for HTTPS. 
+- It caches your assets and other files so users can view pages when offline or on a slow network,  periodic background syncs, and manage cache of a response.
+- It has no DOM access. Run on a different thread to the main Javascript app. They are non-blocking and designed to be fully asynchronous. 
+- Only work for HTTPS. 
 
 
 ### IndexedDB
@@ -715,32 +716,34 @@ Used in serviceWorker. Items in a Cache don’t updated unless explicitly reques
 ### Header:
 HTTP headers represent the metadata associated with an API request and response.
 Request headers:  sent by the client, such as a web browser, to the server. They contain essential information about the request, which helps the server understand and process it correctly. 
-User-Agent: identifies the browser and operating system to the server.
-Accept: indicate the content types like text, video, or image formats that client can process.
-Authorization: used by the client to authenticate itself to the server. 
+- User-Agent: identifies the browser and operating system to the server.
+- Accept: indicate the content types like text, video, or image formats that client can process.
+- Authorization: used by the client to authenticate itself to the server. 
 Response headers: sent back from the server to the client. They provide information about the server and data being sent in the response.
-Content-Type: indicates the media type of the response. It tells the client what the data type of the returned content is, such as text/html for HTML documents, application/json for JSON data. etc.
+- Content-Type: indicates the media type of the response. It tells the client what the data type of the returned content is, such as text/html for HTML documents, application/json for JSON data. etc.
 
 ### Cookie: 
 Are small pieces of data that a server sends to a user’s web browser.  The browser may store the cookie and send it back to the same server with later requests. Cookies are mainly used for three purposes. 
-Session management like logins and shopping carts
-Personalization like user preferences and themes
-Tracking like recording and analyzing user behavior.
+- Session management like logins and shopping carts
+- Personalization like user preferences and themes
+- Tracking like recording and analyzing user behavior.
 
-### Authentication: verifies someone is who they say they are. It requires the user to prove their identity. Usually use some form of authentication to secure access to an application. 
+### Authentication: 
+verifies someone is who they say they are. It requires the user to prove their identity. Usually use some form of authentication to secure access to an application. 
 
-### Authorization: decide what routes and data the user can access, user’s service level of access.
+### Authorization: 
+decide what routes and data the user can access, user’s service level of access.
 
 
 ### Strict Mode
 <StrictMode> is a useful component for highlighting potential problems in an app. It does not render any DOM elements. 
 It activates additional checks for its descendants in dev mode.
 It checks:
-unsafe lifecycle methods
-legacy string ref API usage
-Legacy context API 
-unexpected side effect
-clean up logic
+- unsafe lifecycle methods
+- legacy string ref API usage
+- Legacy context API 
+- unexpected side effect
+- clean up logic
 
 
 
@@ -834,7 +837,7 @@ React is easier to test
 React is suitable for mobile apps creation.
 React has more information and solutions. 
 
-React vs Angular
+### React vs Angular
 
 
 React 19 features
