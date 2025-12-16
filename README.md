@@ -1,167 +1,3 @@
-    React
-What is React 
-advantages of React
-
-
-
-
-React major feature
-Element & component
-Pure Component  
-State
-Props
-State vs Props
-Spread props on DOM element
-Stateless components
-Stateful components
-Batch multiple state update
-
-
-
-
-
-
-Synthetic events
-Pointer events
-JSX
-Rules of JSX
-Virtual DOM
-Reconciliation
-
-
-Real DOM
-environment variable
-
-
-
-
-Router
-React Router & history library
-<Router> components of v6
-default or NotFound page
-Redirect
-Folder structures
-BrowserRouter & HashRouter
-
-
-React Internationalization
-Main features of React Intl
-Shallow Renderer
-localStorage vs sessionStorage
-Post message
-Cookie
-Cookie, localStorage, sessionStage
-Methods on sessionStorage
-Web Worker
-React lifecycle method
-
-
-
-
-React Hooks
-Rules of hooks
-Prevent updating when using setState
-React state
-Ref
-useState vs useRef
-useReducer vs useState
-useReducer
-useState trigger re-render
-
-
-
-
-
-
-Combine useReducer with useContext
-useEffect vs useLayoutEffect
-useEffect hook
-useEffect hook dependency
-Multiple useEffect hook
-Use cases of useLayoutEffect
-useLayoutEffect cause layout thrashing
-useMemo
-useCallback
-Switching component
-useContext
-Custom hooks
-useDeferredValue
-useTransition
-
-
-
-
-Context API
-Controlled vs Uncontrolled comps
-Lifting state up
-Concurrent Mode
-Server-Side Rendering (SSR)
-React Hydration
-Static generation
-
-
-ReactDOMServer
-Code splitting
-React lazy
-Loadable components
-
-
-
-
-Does Lazy function support named export?
-Suspense
-add google analytics for React Router
-Accessibility
-Error boundaries
-
-
-
-
-How to handle code reusability
-
-
-
-
-Prop Drilling
-Keys in list
-Side effects
-HOC
-Children prop
-React.memo
-Render hijacking
-Wrapper component
-Functional & class components
-Prevent a function from being called multiple times
-Fragments
-Prevent component from rendering
-portals
-Optimize the performance
-
-
-
-
-
-
-
-
-
-
-Service Worker
-Cache storage
-Header
-Cookie
-Authentication
-Authorization
-Strict mode
-Enable production mode in React
-Use https instead of http
-use relative path imports
-useImperativeHandle
-React vs Vue
-React vs Angular
-
-
-
 
 
 What is React
@@ -172,6 +8,7 @@ Follow one way data binding.
 JSX makes code more readable
 Component based: use reusable or composable UI components for developing the view.
 
+
 What are the advantages of using React
 Component-Based architecture: app are built on independent, reusable components and easy to integrate with other frameworks (Angular, Backbone)
 Use Virtual DOM to improve performance
@@ -180,12 +17,14 @@ It renders both on client as well as server side
 Unidirectional data flow. 
 Declarative UI and easy testing by using jest
 
+
 What are the limitations of React
 React is a view library, not a full framework.
 Learning curve for developers.
 Integrating into a traditional MVC framework requires additional configuration.
 Code complexity increases with inline templating and JSX.
 Too many smaller components.
+
 
 What are the major features of React
 Core features: 
@@ -203,6 +42,7 @@ Concurrent Mode: new features that help React apps stay responsive and adjust to
 React Server Components: new features that allow components to be rendered entirely on the server, reducing bundle size and improving performance.
 Suspense: supports code splitting and data fetching. It renders fallback before data return.
 
+
 Element and Component
 Element: 
 a React element is a plain JS object. It represents a DOM node or a component. It is the smallest building block in React.
@@ -214,17 +54,20 @@ A component is a function or class that returns an element or a tree of elements
 Components can be split into independent reusable pieces.
 Can be defined by a function or a class.
 
+
  Pure Component
 Is a class component that extends React.PureComponent. It automatically implements the shouldComponentUpdate method with a shallow comparison of props.
 Help to optimize performance by preventing unnecessary re-rendering. If props and state haven’t changed, it will skip re-rendering.
 State
 Refers to a Javascript object that holds data and properties belonging to a component. It can change over time and trigger re-render of the component.
 
+
 Props
 Data (includes functions) passes to a child component from a parent component.
 Read-only: once  a component receives a set of props, it can’t directly modify them.
 Works for functional and class components
 Component reusability: props enable components to be highly reusable.
+
 
 State vs Props
 
@@ -235,6 +78,7 @@ It may add unknown HTML attributes. Instead of using …rest operator, only add 
 
 Stateless components
 Behavior of a component is independent of its state. Prefer to use a function component. Can use a class component as well unless need to use a lifecycle hook.
+
 
 Stateful components
 Behavior of a component is dependent on the state. It can be function components with hooks or class components.
