@@ -35,11 +35,15 @@ Is a state management library that helps manage the application state in a predi
 ### Principles of Redux
 - Single source of truth
   The state of the whole app is stored in an object within one single store. The single state tree makes it easier to track changes over time.
-  ```javascript  const store = createStore(reducer); ```
+  ```javascript  
+  const store = createStore(reducer); 
+  ```
 - State is read-only
   The only way to change the state is to emit an action, an object describing what happened. This ensures that neither the views nor network callbacks will write directly to the state.
-  ```javascript const action = {type: ‘INCREASE’}; ```
-  ```javascript store.dispatch(action); ```
+  ```javascript 
+  const action = {type: ‘INCREASE’}; 
+  store.dispatch(action); 
+  ```
 - Changes are made with pure functions(Reducers)
   Reducers are pure functions that take the previous state and an action as parameters and return the next state.
    ```javascript

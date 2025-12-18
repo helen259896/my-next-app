@@ -27,13 +27,13 @@
 
 
 ### What are the major features of React
-## Core features: 
+### Core features: 
 - Reusable components: React apps are built on components. They are independent, reusable. 
 - Virtual DOM:
 - JSX: a syntax extension that can write HTML-like code in Javascript. It makes code more readable.
 - Unidirectional Data Flow: It follows a one-way data binding model where data flows from parent to child components. It makes the code more predictable and easily to debug.
 - Declarative UI. it allows you to describe what UI should look like for a given state, and it handles the DOM updates.
-## Advanced features:
+### Advanced features:
 - React Hooks: use state and other React features in functional components.
 - Context API: provides a way to share values between components without explicitly passing props through every level of component tree.	
 - Error Boundaries: components that catch Javascript errors anywhere in their child component tree and display fallback UI instead of crashing.
@@ -44,20 +44,20 @@
 
 
 ### Element and Component
-## Element: 
+### Element: 
 - a React element is a plain JS object. It represents a DOM node or a component. It is the smallest building block in React.
 - Elements are immutable. Once created, they can’t change their properties. 
 - Elements can be nested within other elements through their props.
 - Creating an element is fast. It doesn’t impact the real DOM directly
-## Component:
+### Component:
 - A component is a function or class that returns an element or a tree of elements to describe part of the UI. Components accept props and can manage their own states.
 - Components can be split into independent reusable pieces.
 - Can be defined by a function or a class.
 
 
 ###  Pure Component
-Is a class component that extends React.PureComponent. It automatically implements the shouldComponentUpdate method with a shallow comparison of props.
-Help to optimize performance by preventing unnecessary re-rendering. If props and state haven’t changed, it will skip re-rendering.
+- Is a class component that extends React.PureComponent. It automatically implements the shouldComponentUpdate method with a shallow comparison of props.
+- Help to optimize performance by preventing unnecessary re-rendering. If props and state haven’t changed, it will skip re-rendering.
 
 ### State
 Refers to a Javascript object that holds data and properties belonging to a component. It can change over time and trigger re-render of the component.
@@ -70,7 +70,19 @@ Refers to a Javascript object that holds data and properties belonging to a comp
 
 
 ### State vs Props
-
+in React, both state and props are plain JavaScript objects, but they serve different purpose and have distinct behaviors
+### State
+- Definition: state is a data structure that is managed within a component. It represents information that can change over the lifetime of component.
+- Mutability: state is mutable, meaning it can be changed using the setter function.
+- Scope: state is local to the component where it is defined. Only that component can modify its own state.
+- Usage: used for data that needs to change in reponse to user actions, network responses or other dynamic events.
+- Re-rendering: update the state triggers a re-render of the component and its descendants.
+### props
+- Definition: props are inputs to a component, provided by its parent component.
+- Mutability: props are read-only. They are immutable.
+- Scope: props are used to pass data and event handlers down the component tree, enable parent components to configure or communicate with their children.
+- Usage: props are commonly used to make components reusable and configurable. They allow the same component to be rendered with different data or behavior.
+- Analogy: props are as arguments to a function, where state is as variables declared inside the function.
 
 ### Spread props on DOM element
 It may add unknown HTML attributes. Instead of using …rest operator, only add required props.
@@ -194,10 +206,12 @@ sessionStorage:
 - Duplicate a tab copies the tab’s sessionStorage into the new tab.
 - Close a tab/window ends the session and clears objects in sessionStorage. 
 - It is key/value pairs in string format. 
-sessionStorage.setItem(“key”, “value”);
-let data = sessionStorage.getItem(“key”);
-sessionStorage.removeItem(“key”);
-sessionStorage.clear();
+  ```javascript
+  sessionStorage.setItem(“key”, “value”);
+  let data = sessionStorage.getItem(“key”);
+  sessionStorage.removeItem(“key”);
+  sessionStorage.clear();
+  ```
 
 ### Post message
 It is a method that enables cross-origin communication between window objects. Such as a page and a pop-up that it spawned, a page and an iframe embedded. Generally, scripts on different pages are allowed to access each other if and only if the pages follow the same-origin policy (the same protocol, port number, host).
@@ -207,13 +221,41 @@ It is a key/value pair that is stored on your computer browser.  Cookies are use
 - When a user visits a web page, the user profile can be stored in a cookie
 - Next time the user visits the page, the cookie remembers the user profile.
 - Delete a  cookie, set the expiry data as a passed date.
+```javascript
 document.cookie = "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";
+```
 
 ### Cookie, localStorage sessionStorage
-
+### Cookie
+both server-side & client-side.
+manually configured using Expires option
+SSL supported
+Maximum data size is 4kb
+accessible from any window
+sent with requests
+### localStorage
+client-side only
+Forever until deleted
+Maximum size 5 MB
+accessible from any window
+not sent with requests
+### sessionStorage
+client-side only
+until tab is closed
+Maximum size 5 MB
+accessible from same tab
+not sent with requests
 
 ### Methods on sessionStorage
+```javascript
+sessionStorage.setItem('key', 'value'); //save to sessionStorage
+let data = sessionStorage.getItem('key'); // get data from sessionStorage
+sessionStorage.removeItem('key');   //remove data from sessionStorage
+sessionStorage.clear();              //remove all data from sessionStorage
+```
 
+### indexedDB
+indexedDB is a low-level API for client-side storage of larger amounts of structured data, including files/blobs. It enable high-performance searches of the data.
 
 ### Web worker
 Enable web content to run scripts in background threads, separate from the main user interface thread.
@@ -225,15 +267,38 @@ It allows computation intensive tasks to be performed without blocking the main 
 
 ### Example
 1 Create a webworker file: create a file as counter.js
+```javascript
+let i = 0;
+function timedCount(){
+  i = i+1;
+  postMessage(i);
+  setTimeout('timedCount', 500);
+}
 
+timedCount();
+```
 2 Create a webworker object: name the file as web_worker_example.js. Need to check browser support.
-
+```javascript
+if(typeof w == undefined) {
+  w = new Worker('counter.js')
+}
+```
 3 Then, we can receive messages from web worker.
+```javascript
+w.onmessage = function (event){
+  document.getElementById('message').innerHTML = event.data;
+}
+```
 
 4 Terminate a web worker. Web workers will continue to listen for messages until it is terminated.
+```javascript
 w.terminate();
+```
+
 5 Reuse the web worker. Set the worker variable to undefined, you can reuse the code.
+```javascript
 w = undefined;
+```
 
 ### Promise
 Is a JavaScript obj that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It has 3 states:
@@ -266,6 +331,20 @@ It is a Javascript function. It allows developers to use state and other React f
 Abstract stateful logic from components.
 - It provides a simpler way for render props and HOC.
 - It doesn’t cover all use cases of classes. There are no hook equivalents to the getSnapshotBeforeUpdate and componentDidCatch lifecycles. 
+```javascript
+import {useState} from 'react';
+
+function Example(){
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <div> You click {count} times</div>
+      <button onClick={() => setCount(count + 1)}> Click me </button>
+    </>
+  )
+}
+```
 
 ### Benefit of React Hooks
 - Simplified state management
@@ -282,10 +361,24 @@ Apply the above rules by modifying your ESLint.config file.
 
 ### Prevent unnecessary update when using setState
 Return null to stop updating the state.
-
+```javascript
+getUserProfile = (user) => {
+  const latestAddress = user.address;
+  this.setState((state) => {
+    if(state.address === latestAddress){
+      return null;
+    }else {
+      return {title: latestAddress};
+    }
+  });
+};
+```
 
 ### Set state with a dynamic key name
+```javascript
 setState({[event.target.id]: event.target.value})
+```
+
 
 ### React state
 Local state: useState
@@ -305,27 +398,19 @@ When state updates from useState, React schedules the component to re-render. It
 - useRef: don’t cause components to re-render when state changes. It references DOM elements. 
 
 ### useReducer vs useState
-Feature
-useState
-useReducer
-State complexity
-Simple, one variable
-Complex, nested
-Update
-Direct (setState)
-Through actions (dispatch)
-Update logic
-In component
-In reducer function
-Reusability & testing
-Less reusable
-Highly reusable & testable
+Feature                 useState                    useReducer
+State complexity        Simple, one variable        Complex, nested
+Update                  Direct (setState)           Through actions (dispatch)
+Update logic            In component                In reducer function
+Reusability & testing   Less reusable               Highly reusable & testable
 
 
 
 ### useReducer
 It is a React hook used to manage complex state logic inside functional components. It dispatch an action to a reducer function to update its state. It takes 3 arguments:
+```javascript
 const [state, dispatch] = useReducer(reducer, initialState, initFunction);
+```
 - reducer:   a function(state, action) => newState that handles how state should change based on the action.
 - initialState: 
 - dispatch: a function to trigger an update by passing an action.
