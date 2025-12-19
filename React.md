@@ -193,7 +193,8 @@ Main features of React Intl
 Shallow rendering is useful in unit tests. It lets the component render one level deep and assert facts about what its render method returns without worrying about child components.
 
 
-
+### web storage
+Large amounts of data can be stored locally, without affecting website performance. The information is never transfered to the server. It includes localStorage and sessionStorage.
 
 
 ### localStorage vs sessionStorage
@@ -310,9 +311,95 @@ Is a JavaScript obj that represents the eventual completion (or failure) of an a
 - Avoid callback hell
 - Make code more readable and maintainable.
 
+```javascript
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("I'm a Promise!");
+  }, 5000);
+});
+
+promise
+  .then((value) => console.log(value)) // Logs after 5 seconds: "I'm a Promise!"
+  .catch((error) => console.error(error))  // Handles any rejection
+  .finally(() => console.log("Done"));     // Runs regardless of success or failure
+```
+### main rules of promise
+- a promise is an object that has .then() method
+- a pending promise may transition into either fullfilled or rejected state.
+- a fullfilled or rejected promise is settled and it must not transition into any other state.
+- once a promise is settled, the value must not change.
+
+### promise chain
+The process of executing a sequence of asynchronous tasks one after another using promise. 
+```javascript
+new Promise(function (resolve, reject) {
+  setTimeout(() => resolve(1), 1000);
+})
+  .then(function (result) {
+    console.log(result); // 1
+    return result * 2;
+  })
+  .then(function (result) {
+    console.log(result); // 2
+    return result * 3;
+  })
+  .then(function (result) {
+    console.log(result); // 6
+    return result * 4;
+  });
+```
+### promise.all
+Promise.all is a promise that takes an array of promises as input, and it gets resolved when all the promises get resolved or any one of them gets rejected.
+```javascript
+Promise.all([Promise1, Promise2, Promise3])
+  .then(result) => {   console.log(result) }
+  .catch(error => console.log(`Error in promises ${error}`))
+```
+
+### promise.race
+Promise.race() method will return the promise instance which is firstly resolved or rejected.
+```javascript
+var promise1 = new Promise(function (resolve, reject) {
+  setTimeout(resolve, 500, "one");
+});
+var promise2 = new Promise(function (resolve, reject) {
+  setTimeout(resolve, 100, "two");
+});
+
+Promise.race([promise1, promise2]).then(function (value) {
+  console.log(value); // "two" // Both promises will resolve, but promise2 is faster
+});
+```
+
 ### Callback
 Is a function passed into another function as an argument. It is invoked inside the outer function to complete an action.
+Callbacks are needed because javascript is an event driven language. Instead of waiting for a response, javascript will keep executing while listening for other events.
+```javascript
+function callbackFunction(name) {
+  console.log("Hello " + name);
+}
 
+function outerFunction(callback) {
+  let name = prompt("Please enter your name.");
+  callback(name);
+}
+
+outerFunction(callbackFunction);
+```
+
+### callback hell
+Callback hell are multiple nested callbacks which makes code hard to read and debug. 
+```javascript
+async1(function(){
+    async2(function(){
+        async3(function(){
+            async4(function(){
+                ....
+            });
+        });
+    });
+});
+```
 
 
 ### React lifecycle method

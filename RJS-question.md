@@ -12,6 +12,14 @@ There are 3 types of scope:
 - Function scope: variables declared within a  function are accessible only within that function.
 - Block scope: declared with let or const within a block are accessible only within that block. 
 
+### global variables
+Global variables are available throughout the length of the code without any scope. 
+```javascript
+msg = "Hello"; // var is missing, it becomes global variable
+```
+### problems of global variables
+name conflict of local and global variables. It is hard to test and debug.
+
 ### Spread Operator
 (...) allows iterable elements to be expanded into individual elements. It is widely used for copying, merging and passing array elements as function arguments.
 
@@ -52,9 +60,9 @@ Benefits of event-driven programming
 - Flexibility: easily add or modify event handlers without altering the core logic of the app.
 
 ### Event propagation phases:
-- Event Capturing
-- Target
-- Event bubbling
+- Event Capturing: the event starts from the root and move down the DOM tree toward the target
+- Target: the event reaches the target element
+- Event bubbling: the event bubbles up from the target to the root
 
 
 ### Event capturing
@@ -94,9 +102,20 @@ This keyword refers to the object that is executing the current piece of code.
 
 
 ### null, undefined, undeclared variables
-- Null: represent no value
-- Undefined: declared but not assigned a value
+- Null: represent no value. (typeof null) = object
+- Undefined: declared but not assigned a value. (typeof undefined) = undefined
 - Undeclared: throw a referenceError 
+
+### window vs document
+window
+  - it is the root level element in any web page
+  - by default window object is available implicitly in the page
+  - it has methods alert(), confirm()
+document
+  - it is the direct child of window obj. This is known as Document Object Model(DOM)
+  - access via window.document
+  - it provides methods like getElementById, getElementByTagName
+
 
 ### Call,  apply, bind
 They are methods to control the context in which a function is executed.
@@ -237,3 +256,11 @@ script defer :loads script asynchronously, executes only after HTML parsing is c
 ### Modules
 Refer to small units of independent, reusable code. Most modules can import /export an obj literal, a function or a constructor.
 Benefit:  maintainability, reusability, namespacing
+
+### double exclamation (!!)
+The (!!) ensures the type is a boolean.
+```javascript
+let isIE8 = false;
+isIE8 = !!navigator.userAgent.match(/MSIE 8.0/);
+console.log(isIE8); // returns true or false
+```
