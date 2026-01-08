@@ -348,6 +348,7 @@ new Promise(function (resolve, reject) {
     return result * 4;
   });
 ```
+
 ### promise.all
 Promise.all is a promise that takes an array of promises as input, and it gets resolved when all the promises get resolved or any one of them gets rejected.
 ```javascript
@@ -401,6 +402,15 @@ async1(function(){
 });
 ```
 
+### pros and cons of promise over callback
+pros:
+  - avoid callback hell
+  - easy to write sequential asynchronous code with .then()
+  - easy to write parallel asynchronous code with promise.all()
+  - resolve some of the common problems of callback
+cons:
+  - code is a little complex
+  - need ES6 and above
 
 ### React lifecycle method
 Methods that will be automatically called at different phases. It provides effective control and manipulation throughout the component lifecycle.
@@ -873,6 +883,7 @@ Lazy loading: load components and data only when needed
 
 ### Service Worker:
 Service workers act as proxy servers that sit between web applications, the browser and network. It enables app to have offline experience, intercept network requests, and take appropriate action based on network availability.
+- A script runs in the background, separate from the web page. 
 - It caches your assets and other files so users can view pages when offline or on a slow network,  periodic background syncs, and manage cache of a response.
 - It has no DOM access. Run on a different thread to the main Javascript app. They are non-blocking and designed to be fully asynchronous. 
 - Only work for HTTPS. 

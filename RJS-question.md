@@ -5,7 +5,7 @@ Moving variable and function declarations to the top of their scope during compi
 It determines how variable names are resolved based on their location.nested functions have access to variables from their parent scopes, enabling them to utilize and manipulate these variables.
 
 ### Scope
-Scope is the accessibility of variables and functions in different parts of the code during runtime.
+Scope is the accessibility of variables, functions and obj in different parts of the code during runtime.
 In other words, scope determines the visibility of variables in areas of your code.
 There are 3 types of scope:
 - Global scope: variables declared outside any function or block are accessible throughout the entire code.
@@ -26,6 +26,12 @@ name conflict of local and global variables. It is hard to test and debug.
 ### == vs ===
 == converts operands to a common type before comparison. May produce unexpected results.
 === compare both value and type. Ensure accurate comparison. 
+
+### events
+Events are things that happen to HTML elements. Such as
+Web page has finished loading
+Input field was changed
+Button was clicked
 
 ### Event loop
 Event loop allows JavaScript to handle asynchronous tasks on a single thread. It is a continuous process that executes the code. It ensures tasks are handled efficiently without blocking the main thread. 
@@ -59,6 +65,9 @@ Benefits of event-driven programming
 - Modularity and decoupling: components can interact through events without direct dependencies. Improve code organization and maintainability.
 - Flexibility: easily add or modify event handlers without altering the core logic of the app.
 
+### Event flow (Event propagation)
+It refers to in which order events are handled in the browser when a user interacts with elements on a webpage.
+
 ### Event propagation phases:
 - Event Capturing: the event starts from the root and move down the DOM tree toward the target
 - Target: the event reaches the target element
@@ -76,7 +85,8 @@ Uses a single event listener on a parent element to manage events on its child e
 Reduces memory usage .
 Dynamically handles added or removed child elements.
 
-
+### stopPropagation
+The stopPropagation method is used to stop the event from bubbling up the event chain. 
 
 ### This keywork
 The value of this depends on how the function is invoked.
@@ -106,6 +116,15 @@ This keyword refers to the object that is executing the current piece of code.
 - Undefined: declared but not assigned a value. (typeof undefined) = undefined
 - Undeclared: throw a referenceError 
 
+### null vs undefined
+| Null                                                                                            | Undefined                                                                                               |
+| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| It is an assignment value which indicates that variable points to no object.                    | It is not an assignment value where a variable has been declared but has not yet been assigned a value. |
+| Type of null is object                                                                          | Type of undefined is undefined                                                                          |
+| The null value is a primitive value that represents the null, empty, or non-existent reference. | The undefined value is a primitive value used when a variable has not been assigned a value.            |
+| Indicates the absence of a value for a variable                                                 | Indicates absence of variable itself                                                                    |
+| Converted to zero (0) while performing primitive operations                                     | Converted to NaN while performing primitive operations                                                  |
+
 ### window vs document
 window
   - it is the root level element in any web page
@@ -116,6 +135,34 @@ document
   - access via window.document
   - it provides methods like getElementById, getElementByTagName
 
+### find operating system detail
+window.navigator obj contains the os info.
+
+### window location obj
+redirect to a new page
+get current url
+```javascript
+function redirect() {
+  window.location.href = "newPage.html";
+}
+
+console.log("location.href", window.location.href); // Returns full URL
+```
+It has properties as
+- href: the entire URL
+- protocol:
+- host: hostname and port of the URL
+- port: port number
+- pathname:
+- search: query portion
+- hash: anchor portion
+
+
+
+### native, host and user obj
+Native obj: are obj that defined by the Javascript. Such as String, Math, Function.
+Host obj: are obj provided by the browser or runtime environment (Node)
+User obj: are obj defined in javascript code, such as obj for user profile
 
 ### Call,  apply, bind
 They are methods to control the context in which a function is executed.
@@ -192,12 +239,17 @@ const myFunc = (a) ⇒ a+10
 
 ### Currying function
 Is the process of transforming a function with multiple arguments into a sequence of nested functions, each accepting only one argument at a time.
+benefit:
+- improve code resuablity.
+- enhance functional composition.
+- encourage clean modular code.
 ```javascript
-const curryUnaryFunc = (a) ⇒ (b) ⇒ © ⇒ a+b+c;
+const curryUnaryFunc = (a) ⇒ (b) ⇒ (c) ⇒ a+b+c;
 curryUnaryFunc(1)          //1
 curryUnaryFunc(2)(3)      //5
 curryUnaryFunc(4)(5)(6)  //15
 ```
+
 
 ### Let vs var
 ### let
@@ -247,10 +299,10 @@ myFunction('hello Mrs.')
 ```
 
 
-### <script> <scritp async> <script defer>
-script : block HTML parsing until script loads and executes
-script async : loads script asynchronously, executes as soon as the script is ready
-script defer :loads script asynchronously, executes only after HTML parsing is complete
+### script, scritp async, script defer
+- script : block HTML parsing until script loads and executes
+- script async : loads script asynchronously, executes as soon as the script is ready
+- script defer :loads script asynchronously, executes only after HTML parsing is complete
 
 
 ### Modules
@@ -264,3 +316,30 @@ let isIE8 = false;
 isIE8 = !!navigator.userAgent.match(/MSIE 8.0/);
 console.log(isIE8); // returns true or false
 ```
+### JavaScript is interpreted language
+JavaScript is an interpreted language. An interpreter in the browser reads over the JavaScript code, interprets each line, and runs it.
+JavaScript is a case sensitive language. 
+JavaScript is a single threaded language.
+
+### JSON
+JSON is a lightweight format used for data interchanging.
+It has methods: stringify and parse
+When sending data to a web server, the data has to be in a string format. 
+When receiving data from a server, convert the data from string to obj. 
+When exchanging data between a browser and a server, JSON is needed.
+```javascript
+var userJSON = { name: "John", age: 31 };
+var userString = JSON.stringify(userJSON);
+console.log(userString); //"{"name":"John","age":31}"
+
+var userString = '{"name":"John","age":31}';
+var userJSON = JSON.parse(userString);
+console.log(userJSON); // {name: "John", age: 31}
+```
+
+### PWAs
+Progressive web applications (PWAs) are a type of mobile app delivered through the web, built using common web technologies including HTML, CSS and JavaScript. These PWAs are deployed to servers, accessible through URLs, and indexed by search engines.
+
+
+### double exclamation
+(!!) ensures the resulting is a boolean.
