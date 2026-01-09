@@ -136,7 +136,7 @@ document
   - it provides methods like getElementById, getElementByTagName
 
 ### find operating system detail
-window.navigator obj contains the os info.
+window.navigator obj contains the os info and platform info
 
 ### window location obj
 redirect to a new page
@@ -157,7 +157,16 @@ It has properties as
 - search: query portion
 - hash: anchor portion
 
-
+### window history obj
+window.history obj contains the browser's history. You can load previous and next URL by back() & enxt() methods.
+```javascript
+function goBack() {
+  window.history.back();
+}
+function goForward() {
+  window.history.forward();
+}
+```
 
 ### native, host and user obj
 Native obj: are obj that defined by the Javascript. Such as String, Math, Function.

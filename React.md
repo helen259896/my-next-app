@@ -953,7 +953,15 @@ or run     set HTTPS=true && npm start
 Create a .env file in the project root and write
 NODE_PATH=src/app
 
+### same-origin policy
+The same-origin policy is a policy that prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number. If you enable this policy then it prevents a malicious script on one page from obtaining access to sensitive data on another web page using Document Object Model(DOM).
 
+### Javascript interpreter
+JavaScript is an interpreted language, not a compiled language. It is a program built into environment like web browsers and Node.js that reads and executes JavaScript code line by line. Nowadays modern browsers use a technology known as Just-In-Time (JIT) compilation, which compiles JavaScript to executable bytecode just as it is about to run.
+
+### BOM
+The Browser Object Model (BOM) allows JavaScript to "talk to" the browser. It consists of the objects navigator, history, screen, location and document which are children of the window. The Browser Object Model is not standardized and can change based on different browsers.
+  ![Screenshot](public/BOM.png)
 
 ### token
 
