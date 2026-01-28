@@ -1,4 +1,27 @@
 
+What is React 
+What is the advantage of React 
+What are the limitations of React
+What are the major features of React
+
+
+
+
+
+
+pros and cons of promise over callback
+React lifecycle method
+React Hooks
+Benefit of React Hooks
+What rules need to be followed for hooks?
+Prevent unnecessary update when using setState
+Set state with a dynamic key name
+React state
+Ref
+
+
+
+
 
 ### What is React 
 - React is a front-end Javascript library which is useful in developing UI for single page applications. It is helpful in building complex and reusable UI components applications. 
@@ -412,6 +435,39 @@ cons:
   - code is a little complex
   - need ES6 and above
 
+### differences between promises and observables
+Some of the major difference in a tabular form
+
+     | Promises                                                           | Observables                                                                              |
+     | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+     | Emits only a single value at a time                                | Emits multiple values over a period of time(stream of values ranging from 0 to multiple) |
+     | Eager in nature; they are going to be called immediately           | Lazy in nature; they require subscription to be invoked                                  |
+     | Promise is always asynchronous even though it resolved immediately | Observable can be either synchronous or asynchronous                                     |
+     | Doesn't provide any operators                                      | Provides operators such as map, forEach, filter, reduce, retry, and retryWhen etc        |
+     | Cannot be canceled                                                 | Canceled by using unsubscribe() method                                                   |
+
+### observable
+An Observable is basically a function that can return a stream of values either synchronously or asynchronously to an observer over time. The consumer can get the value by calling subscribe() method. 
+```javascript
+import { Observable } from "rxjs";
+
+const observable = new Observable((observer) => {
+  setTimeout(() => {
+    observer.next("Message from a Observable!");
+  }, 3000);
+});
+
+observable.subscribe((value) => console.log(value));
+```
+ ![Screenshot](images/observable.png)
+
+### common use cases of observables
+Some of the most common use cases of observables are web sockets with push notifications, user input changes, repeating intervals, etc
+
+### RxJS
+RxJS (Reactive Extensions for JavaScript) is a library  using observables to implement asynchronous or callback-based. It also provides utility functions for creating and working with observables.
+
+
 ### React lifecycle method
 Methods that will be automatically called at different phases. It provides effective control and manipulation throughout the component lifecycle.
 - Constructor: it is called when a component is initiated. Set up the initial state and values.
@@ -790,6 +846,11 @@ Handle them in useEffect hook
 
 ### Higher-Order Components (HOC)
 Are functions that take a component as a parameter and return a new component with additional props, behavior, or data. Useful for reuse components. 
+benefits of HOC:
+- Abstraction
+- Reusability
+- Immutability
+- Modularity
 
 ### 	withLoading(Dashboard);
 Use cases:
@@ -959,15 +1020,27 @@ The same-origin policy is a policy that prevents JavaScript from making requests
 ### Javascript interpreter
 JavaScript is an interpreted language, not a compiled language. It is a program built into environment like web browsers and Node.js that reads and executes JavaScript code line by line. Nowadays modern browsers use a technology known as Just-In-Time (JIT) compilation, which compiles JavaScript to executable bytecode just as it is about to run.
 
+### JavaScript is a Single threaded language
+JavaScript is a single-threaded language. The language does not allow the programmer to write code so that the interpreter can run parts of it in parallel in multiple threads or processes. 
+java, go, C++ are multi-threaded and multi-process programs.
+
 ### BOM
 The Browser Object Model (BOM) allows JavaScript to "talk to" the browser. It consists of the objects navigator, history, screen, location and document which are children of the window. The Browser Object Model is not standardized and can change based on different browsers.
   ![Screenshot](public/BOM.png)
+
+var img = 'public/BOM.png';
+console.log(img.width);
+
+### node.js
+Node.js is a JavaScript runtime environment and server-side platform for building fast and scalable network application. It is an event-based, non-blocking, asynchronous I/O.
+
 
 ### token
 
 
 window.history.pushState
 window.history.replaceState
+window.location.href: change url and reload the page
 window.location.assign() : load a new document
 window.location.reload(): reload the current document
 window.location.replace(): replace the current document
@@ -1021,6 +1094,17 @@ Const MyInput = forwardRef(function MyInput(props, ref) {
 return <input {...props} ref={ref} />
 })
 
+# babel
+Babel is a JavaScript transpiler to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
+
+# is node.js a single threaded
+Node is a single thread, but some of the functions included in the Node.js standard library(e.g, fs module functions) are not single threaded. i.e, Their logic runs outside of the Node.js single thread to improve the speed and performance of a program.
+
+### what is MEAN stack
+The MEAN (MongoDB, Express, AngularJS, and Node.js) stack is the most popular open-source JavaScript software tech stack available for building dynamic web apps where you can write both the server-side and client-side halves of the web project entirely in JavaScript.
+
+### what is MERN stack
+The MEAN (MongoDB, Express, React.js, and Node.js) stack is the most popular open-source JavaScript software tech stack available for building dynamic web apps for both the server-side and client-side web project entirely in JavaScript.
 
 ### React vs Vue.js
 React has more flexibility in developing large apps. 
