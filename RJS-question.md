@@ -76,72 +76,9 @@
 | 72 | [ways to execute external scripts](#ways-to-execute-external-scripts) |
 
 
-| 21 | [Scope](#Scope) |
-| 22 | [Hoisting](#hHoisting) |
-| 24 | [Scope](#Scope) |
-| 10 | [Hoisting](#hHoisting) |
-| 12 | [Scope](#Scope) |
-| 13 | [Hoisting](#hHoisting) |
-| 15 | [Scope](#Scope) |
-| 16 | [Hoisting](#hHoisting) |
-| 18 | [Scope](#Scope) |
-| 19 | [Hoisting](#hHoisting) |
-| 21 | [Scope](#Scope) |
-| 22 | [Hoisting](#hHoisting) |
-| 24 | [Scope](#Scope) |
-| 9 | [Scope](#Scope) |
-| 10 | [Hoisting](#hHoisting) |
-| 12 | [Scope](#Scope) |
-| 13 | [Hoisting](#hHoisting) |
-| 15 | [Scope](#Scope) |
-| 16 | [Hoisting](#hHoisting) |
-| 18 | [Scope](#Scope) |
-| 19 | [Hoisting](#hHoisting) |
-| 21 | [Scope](#Scope) |
-| 22 | [Hoisting](#hHoisting) |
-| 24 | [Scope](#Scope) |
-| 10 | [Hoisting](#hHoisting) |
-| 12 | [Scope](#Scope) |
-| 13 | [Hoisting](#hHoisting) |
-| 15 | [Scope](#Scope) |
-| 16 | [Hoisting](#hHoisting) |
-| 18 | [Scope](#Scope) |
-| 19 | [Hoisting](#hHoisting) |
-| 21 | [Scope](#Scope) |
-| 22 | [Hoisting](#hHoisting) |
-| 24 | [Scope](#Scope) |
-| 9 | [Scope](#Scope) |
-| 10 | [Hoisting](#hHoisting) |
-| 12 | [Scope](#Scope) |
-| 13 | [Hoisting](#hHoisting) |
-| 15 | [Scope](#Scope) |
-| 16 | [Hoisting](#hHoisting) |
-| 18 | [Scope](#Scope) |
-| 19 | [Hoisting](#hHoisting) |
-| 21 | [Scope](#Scope) |
-| 22 | [Hoisting](#hHoisting) |
-| 24 | [Scope](#Scope) |
-| 10 | [Hoisting](#hHoisting) |
-| 12 | [Scope](#Scope) |
-| 13 | [Hoisting](#hHoisting) |
-| 15 | [Scope](#Scope) |
-| 16 | [Hoisting](#hHoisting) |
-| 18 | [Scope](#Scope) |
-| 19 | [Hoisting](#hHoisting) |
-| 21 | [Scope](#Scope) |
-| 22 | [Hoisting](#hHoisting) |
-| 24 | [Scope](#Scope) |
-| 9 | [Scope](#Scope) |
-| 10 | [Hoisting](#hHoisting) |
-| 12 | [Scope](#Scope) |
-| 13 | [Hoisting](#hHoisting) |
-| 15 | [Scope](#Scope) |
-| 16 | [Hoisting](#hHoisting) |
-| 18 | [Scope](#Scope) |
-| 19 | [Hoisting](#hHoisting) |
-| 21 | [Scope](#Scope) |
-| 22 | [Hoisting](#hHoisting) |
-| 24 | [Scope](#Scope) |
+
+
+
 <!-- TOC_END -->
 1. ### Hoisting
 Moving variable and function declarations to the top of their scope during compilation phase.
