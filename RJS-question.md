@@ -1,5 +1,7 @@
 ### Table of Contents
 <!-- TOC_START -->
+| No. | Questions |
+| --- | --------- |
 | 1 | [Hoisting](#hHoisting) |
 | 2 | [Lexical scoping](#Lexical-scoping) |
 | 3 | [Scope](#Scope) |
